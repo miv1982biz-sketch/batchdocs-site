@@ -14,70 +14,98 @@
 <meta property="og:image" content="https://batchdocs.globe-ent.com/icon-512.png">
 <title>Batch Docs — Mail-merge spreadsheet rows into Google Docs & PDFs</title>
 <style>
-body { font-family: -apple-system, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif; line-height: 1.7; color: #222; max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
-nav { display: flex; gap: 16px; flex-wrap: wrap; padding: 12px 0 20px; border-bottom: 1px solid #e2e2e2; margin-bottom: 28px; font-size: 14px; }
-nav a { color: #0b57d0; text-decoration: none; }
+:root { --ink:#222; --mut:#5f6368; --line:#e2e2e2; --blue:#0b57d0; --bg:#f8fafd; }
+* { box-sizing: border-box; }
+body { font-family: -apple-system, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif; line-height: 1.7; color: var(--ink); margin: 0; }
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 16px 64px; }
+nav { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; padding: 16px 0; font-size: 14px; }
+nav a { color: var(--blue); text-decoration: none; }
 nav a:hover { text-decoration: underline; }
-nav .brand { font-weight: 700; color: #222; margin-right: 8px; }
-h1 { font-size: 28px; line-height: 1.3; }
-h2 { font-size: 20px; margin-top: 36px; }
-h3 { font-size: 16px; margin-top: 28px; }
-footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid #e2e2e2; font-size: 13px; color: #666; }
+nav .brand { font-weight: 700; color: var(--ink); margin-right: 8px; display: inline-flex; align-items: center; gap: 8px; }
+nav .brand img { width: 24px; height: 24px; border-radius: 6px; }
+.hero { background: var(--bg); border: 1px solid var(--line); border-radius: 16px; padding: 40px 28px; text-align: center; margin: 8px 0 36px; }
+.hero img { width: 72px; height: 72px; border-radius: 16px; }
+.hero h1 { font-size: 30px; line-height: 1.3; margin: 16px 0 8px; }
+.hero .tag { font-size: 18px; font-weight: 700; margin: 0 0 8px; }
+.hero p { color: var(--mut); margin: 0 auto 20px; max-width: 620px; }
+.btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn { display: inline-block; padding: 10px 20px; border-radius: 999px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1px solid var(--blue); }
+.btn.primary { background: var(--blue); color: #fff; }
+.btn.ghost { color: var(--blue); background: #fff; }
+h2 { font-size: 22px; margin-top: 44px; }
+h3 { font-size: 17px; margin: 0 0 6px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 16px; }
+.card { border: 1px solid var(--line); border-radius: 12px; padding: 18px; background: #fff; }
+.card p { margin: 0; color: var(--mut); font-size: 15px; }
+.stepnum { display: inline-flex; width: 26px; height: 26px; border-radius: 50%; background: var(--blue); color: #fff; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; margin-bottom: 10px; }
+.price .plan { font-size: 15px; }
+.price .amount { font-size: 16px; font-weight: 700; color: var(--ink); }
+footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 13px; color: #666; }
 code { background: #f3f3f3; padding: 1px 5px; border-radius: 4px; }
+.lang { margin-top: 56px; border-top: 2px solid var(--line); padding-top: 8px; }
 </style>
 </head>
 <body>
-<nav><span class="brand">Batch Docs</span><a href="index.html">Home</a></nav>
+<div class="wrap">
+<nav><span class="brand"><img src="icon-128.png" alt="">Batch Docs</span><a href="index.html">Home</a></nav>
+
+<header class="hero">
+<img src="icon-512.png" alt="Batch Docs icon">
 <h1>Batch Docs</h1>
-<p><strong>Mail-merge spreadsheet rows into finished Google Docs and PDFs.</strong>
-One row, one document — generated in bulk from a single template.</p>
+<p class="tag">Mail-merge spreadsheet rows into finished Google Docs and PDFs.</p>
+<p>One row, one document — generated in bulk from a single template.</p>
+<div class="btns">
+<a class="btn primary" href="#how">See how it works</a>
+<a class="btn ghost" href="#pricing">Pricing</a>
+</div>
+</header>
+
 <p>You keep the data in Google Sheets. The documents still have to be made one
 by one — invoices, certificates, contracts, notices, reports. Batch Docs
 closes that gap: write your document once as a Google Docs template using
 simple <code>{{tag}}</code> placeholders, then generate one finished document per
 spreadsheet row.</p>
-<h3>How it works</h3>
-<ol>
-<li><strong>Pick a template.</strong> Point Batch Docs at your Google Docs template; it
+
+<h2 id="how">How it works</h2>
+<div class="cards">
+<div class="card"><span class="stepnum">1</span><h3>Pick a template</h3><p>Point Batch Docs at your Google Docs template; it
    detects every <code>{{tag}}</code> automatically and matches tags to your sheet's
-   columns (you can adjust any match by hand).</li>
-<li><strong>Choose the output.</strong> Google Doc or PDF, a file-name pattern built from
-   your own columns (e.g. <code>Invoice_{{Client}}_{{No}}</code>), and a Drive folder.</li>
-<li><strong>Run.</strong> Batch Docs generates every document, saves it to Drive, and
+   columns (you can adjust any match by hand).</p></div>
+<div class="card"><span class="stepnum">2</span><h3>Choose the output</h3><p>Google Doc or PDF, a file-name pattern built from
+   your own columns (e.g. <code>Invoice_{{Client}}_{{No}}</code>), and a Drive folder.</p></div>
+<div class="card"><span class="stepnum">3</span><h3>Run</h3><p>Batch Docs generates every document, saves it to Drive, and
    writes the status, a link to the file, and the timestamp back into your
    sheet — so you always have a complete record of what was generated, when,
-   and where it lives.</li>
-</ol>
-<h3>Key features</h3>
-<ul>
-<li><strong>Recipes, not repetition.</strong> Save a generation setup as a recipe inside
+   and where it lives.</p></div>
+</div>
+
+<h2>Key features</h2>
+<div class="cards">
+<div class="card"><h3>Recipes, not repetition</h3><p>Save a generation setup as a recipe inside
   your spreadsheet. Next month's run is one click — no re-mapping, no
-  re-checking.</li>
-<li><strong>Deterministic by design.</strong> No AI guesswork: the same template and the
+  re-checking.</p></div>
+<div class="card"><h3>Deterministic by design</h3><p>No AI guesswork: the same template and the
   same data always produce the same document. Built for forms and business
-  documents that have to be exactly right, in bulk, with a history.</li>
-<li><strong>Private by design.</strong> Batch Docs runs inside your Google account —
+  documents that have to be exactly right, in bulk, with a history.</p></div>
+<div class="card"><h3>Private by design</h3><p>Batch Docs runs inside your Google account —
   your spreadsheets, templates, and generated documents never leave it,
   and no developer server ever receives your document data. The one small
   exception is the license check for paid plans, which sends only your
   license token and an account identifier — never content. Details are in
-  the Privacy Policy.</li>
-</ul>
-<h3 id="pricing">Pricing</h3>
-<ul>
-<li><strong>Free</strong> — 25 generated documents per month. Full feature set. When you reach the monthly limit, further generation pauses until the next month. Documents you have already generated and recipes you have saved stay in your Google account and remain yours, whatever plan you are on.</li>
-<li><strong>Pro</strong> — US$9 per user/month, or US$69/year. Unlimited generation. For recurring monthly runs — invoices, certificates, notices — at any volume.</li>
-<li><strong>Team</strong> — US$49 per workspace/month. <em>(Planned — not yet available.)</em></li>
-</ul>
-<h3>Support</h3>
+  the Privacy Policy.</p></div>
+</div>
+
+<h2 id="pricing">Pricing</h2>
+<div class="cards price">
+<div class="card"><h3>Free</h3><p><span class="amount">25 generated documents per month.</span> Full feature set. When you reach the monthly limit, further generation pauses until the next month. Documents you have already generated and recipes you have saved stay in your Google account and remain yours, whatever plan you are on.</p></div>
+<div class="card"><h3>Pro</h3><p><span class="amount">US$9 per user/month, or US$69/year.</span> Unlimited generation. For recurring monthly runs — invoices, certificates, notices — at any volume.</p></div>
+<div class="card"><h3>Team</h3><p><span class="amount">US$49 per workspace/month.</span> <em>(Planned — not yet available.)</em></p></div>
+</div>
+
+<h2>Support</h2>
 <p>Questions, or a problem not covered in the add-on's help: <strong><a href="mailto:miv1982.biz@gmail.com">miv1982.biz@gmail.com</a></strong></p>
-<h3>Legal</h3>
-<ul>
-<li><a href="privacy-policy.html">Privacy Policy</a></li>
-<li><a href="terms-of-service.html">Terms of Service</a></li>
-<li><a href="refund-policy.html">Refund Policy</a></li>
-</ul>
-<hr />
+
+<div class="lang">
 <h2>Batch Docs（日本語）</h2>
 <p><strong>スプレッドシートの行データを、完成した Google ドキュメントや PDF に
 変換します。</strong> 1行につき1文書——1つのテンプレートから一括生成。</p>
@@ -88,44 +116,41 @@ Batch Docs はその手間をなくすためのアドオンです。Google ド�
 <code>{{タグ}}</code> を置くだけ。あとはスプレッドシートの行ごとに、完成した文書が
 自動で生成されます。</p>
 <h3>使い方</h3>
-<ol>
-<li><strong>テンプレートを選ぶ。</strong> Google ドキュメントのテンプレを指定すると、
+<div class="cards">
+<div class="card"><span class="stepnum">1</span><h3>テンプレートを選ぶ</h3><p>Google ドキュメントのテンプレを指定すると、
    <code>{{タグ}}</code> を自動検出し、シートの列と自動で対応付けます（手動で変更も
-   可能）。</li>
-<li><strong>出力を選ぶ。</strong> Google ドキュメントか PDF、列の値を使ったファイル名
-   パターン（例：<code>請求書_{{取引先}}_{{番号}}</code>）、保存先フォルダを指定します。</li>
-<li><strong>実行する。</strong> 全文書を生成して Drive に保存し、シートに「ステータス／
+   可能）。</p></div>
+<div class="card"><span class="stepnum">2</span><h3>出力を選ぶ</h3><p>Google ドキュメントか PDF、列の値を使ったファイル名
+   パターン（例：<code>請求書_{{取引先}}_{{番号}}</code>）、保存先フォルダを指定します。</p></div>
+<div class="card"><span class="stepnum">3</span><h3>実行する</h3><p>全文書を生成して Drive に保存し、シートに「ステータス／
    ファイルへのリンク／生成日時」を書き戻します。何を・いつ・どこに
-   生成したかが、シート上にすべて残ります。</li>
-</ol>
+   生成したかが、シート上にすべて残ります。</p></div>
+</div>
 <h3>特徴</h3>
-<ul>
-<li><strong>レシピで繰り返しをなくす。</strong> 生成設定を「レシピ」としてスプレッド
+<div class="cards">
+<div class="card"><h3>レシピで繰り返しをなくす</h3><p>生成設定を「レシピ」としてスプレッド
   シート内に保存できます。来月の運用はワンクリック。再設定も再確認も
-  不要です。</li>
-<li><strong>決定論的な生成。</strong> AI の推測は入りません。同じテンプレと同じデータ
+  不要です。</p></div>
+<div class="card"><h3>決定論的な生成</h3><p>AI の推測は入りません。同じテンプレと同じデータ
   からは、常に同じ文書が生成されます。「決まった帳票を・大量に・
-  正確に・履歴付きで出す」ための道具です。</li>
-<li><strong>プライバシー配慮の設計。</strong> 処理はすべてあなたの Google アカウント
+  正確に・履歴付きで出す」ための道具です。</p></div>
+<div class="card"><h3>プライバシー配慮の設計</h3><p>処理はすべてあなたの Google アカウント
   内で完結し、文書データが開発者のサーバーに送られることはありません。
   唯一の例外は有料プランのライセンス確認で、送信されるのはライセンス
   トークンとアカウント識別子のみです（コンテンツは送信されません）。
-  詳細はプライバシーポリシーをご覧ください。</li>
-</ul>
+  詳細はプライバシーポリシーをご覧ください。</p></div>
+</div>
 <h3>料金</h3>
-<ul>
-<li><strong>Free（無料）</strong> — 月25件まで生成可能。全機能が使えます。月の上限に達すると、その月の追加生成は止まります。生成済みの文書と保存したレシピは、あなたの Google アカウントに残り、プランに関係なくいつでも使えます。</li>
-<li><strong>Pro</strong> — US$9／ユーザー／月、または US$69／年。生成件数無制限。毎月の定型生成（請求書・証明書・通知書など）に、件数を気にせず使えます。</li>
-<li><strong>Team</strong> — US$49／ワークスペース／月。<em>（将来提供予定）</em></li>
-</ul>
+<div class="cards price">
+<div class="card"><h3>Free（無料）</h3><p><span class="amount">月25件まで生成可能。</span> 全機能が使えます。月の上限に達すると、その月の追加生成は止まります。生成済みの文書と保存したレシピは、あなたの Google アカウントに残り、プランに関係なくいつでも使えます。</p></div>
+<div class="card"><h3>Pro</h3><p><span class="amount">US$9／ユーザー／月、または US$69／年。</span> 生成件数無制限。毎月の定型生成（請求書・証明書・通知書など）に、件数を気にせず使えます。</p></div>
+<div class="card"><h3>Team</h3><p><span class="amount">US$49／ワークスペース／月。</span> <em>（将来提供予定）</em></p></div>
+</div>
 <h3>サポート</h3>
 <p>お問い合わせ： <strong><a href="mailto:miv1982.biz@gmail.com">miv1982.biz@gmail.com</a></strong></p>
-<h3>法務情報</h3>
-<ul>
-<li><a href="privacy-policy.html">プライバシーポリシー</a></li>
-<li><a href="terms-of-service.html">利用規約</a></li>
-<li><a href="refund-policy.html">返金ポリシー</a></li>
-</ul>
+</div>
+
 <footer>Batch Docs — operated by Mikio Furusawa. Contact: <a href="mailto:miv1982.biz@gmail.com">miv1982.biz@gmail.com</a><br><a href="privacy-policy.html">Privacy Policy</a> · <a href="terms-of-service.html">Terms of Service</a> · <a href="refund-policy.html">Refund Policy</a></footer>
+</div>
 </body>
 </html>
