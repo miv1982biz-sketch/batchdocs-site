@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Batch Docs</title>
+<style>
+body { font-family: -apple-system, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif; line-height: 1.7; color: #222; max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+nav { display: flex; gap: 16px; flex-wrap: wrap; padding: 12px 0 20px; border-bottom: 1px solid #e2e2e2; margin-bottom: 28px; font-size: 14px; }
+nav a { color: #0b57d0; text-decoration: none; }
+nav a:hover { text-decoration: underline; }
+nav .brand { font-weight: 700; color: #222; margin-right: 8px; }
+h1 { font-size: 28px; line-height: 1.3; }
+h2 { font-size: 20px; margin-top: 36px; }
+h3 { font-size: 16px; margin-top: 28px; }
+footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid #e2e2e2; font-size: 13px; color: #666; }
+code { background: #f3f3f3; padding: 1px 5px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<nav><span class="brand">Batch Docs</span><a href="index.html">Home</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms of Service</a><a href="refund-policy.html">Refund Policy</a></nav>
+<h1>Privacy Policy — Batch Docs</h1>
+<p><strong>Effective date:</strong> October 31, 2026
+<strong>Operator:</strong> Mikio Furusawa ("we", "us")
+<strong>Contact:</strong> miv1982.biz@gmail.com</p>
+<p>Batch Docs ("the Add-on") is a Google Sheets add-on that generates Google Docs
+and PDF files in bulk from the rows of a spreadsheet, using a Google Docs
+template. This policy explains exactly what data the Add-on accesses, where
+that data lives, and what we do <strong>not</strong> do with it. The short version: <strong>the
+Add-on runs inside your Google account, your spreadsheet content never leaves
+Google's infrastructure to us, and we operate no server that receives your
+spreadsheet data.</strong></p>
+<h2>1. Data the Add-on accesses, and why</h2>
+<p>The Add-on requests four Google permissions (OAuth scopes):</p>
+<ul>
+<li><strong>Current spreadsheet only</strong> (<code>spreadsheets.currentonly</code>). When you run a
+  generation, the Add-on reads the rows of the spreadsheet you have open —
+  the header row and the data rows of the active sheet — so it can fill your
+  template. After generating, it writes back three things into that same
+  spreadsheet: a status, a link to each generated file, and a timestamp.</li>
+<li><strong>Google Drive</strong> (<code>drive</code>). The Add-on uses Drive access to open the
+  template and the output folder you select, and to create the output folder
+  and the generated documents and PDFs in your Drive. Although this
+  permission covers your Drive, the Add-on only works with the templates and
+  output locations you choose — it does not browse, index, or read unrelated
+  files.</li>
+<li><strong>Google Docs</strong> (<code>documents</code>). The Add-on reads your template document to
+  find its <code>{{tags}}</code>, and creates the generated documents from it.</li>
+<li><strong>User interface display</strong> (<code>script.container.ui</code>). This permission only
+  lets the Add-on show its sidebar and dialogs inside Google Sheets. It
+  grants no access to any data.</li>
+</ul>
+<p>The Add-on does <strong>not</strong> request access to your Gmail, your contacts, or your
+calendar. All document processing happens inside your Google account (see
+Section 2). The single exception is license verification for paid plans,
+which sends only your license token and an account identifier to our license
+service — never your content (see Section 2).</p>
+<h2>2. Where your data lives</h2>
+<ul>
+<li><strong>Your content stays in your Google account.</strong> Spreadsheet rows, templates,
+  and generated documents are processed by Google Apps Script under your
+  account and stored in your Google Drive. They are not copied to, stored on,
+  or transmitted to any server operated by us.</li>
+<li><strong>Recipes are stored in your spreadsheet.</strong> A "recipe" (template reference,
+  tag-to-column mapping, output format, file-name pattern, output folder, and
+  write-back column names) is saved in the properties of the spreadsheet
+  itself (Google Apps Script DocumentProperties). It lives and dies with that
+  spreadsheet and is visible only to people who can access that spreadsheet
+  through the Add-on.</li>
+<li><strong>Usage counter.</strong> To enforce the Free plan limit, the Add-on keeps a simple
+  monthly counter of how many documents you have generated. The counter is a
+  number stored in your own Apps Script user properties (UserProperties)
+  inside your Google account. It contains no spreadsheet content.</li>
+<li><strong>License key and license verification.</strong> If you use a paid plan, the
+  license key (token) you enter is stored in your own Apps Script user
+  properties in your Google account so the Add-on can check your plan when
+  it runs. To verify a paid license, the Add-on sends <strong>only</strong> the license
+  token and a Google account identifier (the email address of the account
+  using the Add-on, or an installation ID where no email address is
+  available) to a license service operated by us. <strong>No document content,
+  spreadsheet data, template content, or file names are ever sent.</strong> The
+  license service stores only the token's hash (never the token itself),
+  your plan status, and the subscription period data it receives from our
+  payment provider (see Section 3). This license check is the only
+  communication the Add-on makes to a service operated by us; all document
+  processing still happens entirely inside your Google account.</li>
+</ul>
+<h2>3. Payments</h2>
+<p>Paid plans are sold through <strong>Paddle</strong>, which acts as the merchant of record.
+When you buy a subscription, Paddle — not us — collects and processes your
+payment details (such as card information) under Paddle's own privacy policy.
+We do not receive or store your full payment card details. We receive from
+Paddle only the information needed to operate your subscription (for example:
+that a purchase or renewal occurred, the plan, its status, and a license key
+or equivalent entitlement record).</p>
+<h2>4. What we do NOT do</h2>
+<ul>
+<li>We do not collect, receive, or store the content of your spreadsheets,
+  templates, or generated documents on any server of ours.</li>
+<li>We do not sell personal data.</li>
+<li>We do not use your content for advertising, and the Add-on contains no
+  advertising or third-party analytics trackers.</li>
+<li>We do not send email on your behalf; the Add-on has no Gmail permission.</li>
+</ul>
+<h2>5. Data we may receive outside the Add-on</h2>
+<p>If you contact us for support, we receive whatever you send us in that
+message (for example your email address and a description of the problem).
+Please do not send us spreadsheet files or documents containing confidential
+information unless we specifically ask for a minimal example to reproduce an
+issue. Support correspondence is used only to answer you and improve the
+Add-on.</p>
+<h2>6. Data retention and deletion</h2>
+<p>Because your content and settings live in your Google account, you control
+them:</p>
+<ul>
+<li>Delete a recipe by deleting the spreadsheet, or clearing it in the Add-on.</li>
+<li>Remove the usage counter and license key by removing the Add-on's stored
+  data (uninstall the Add-on and, if needed, ask us how to clear Apps Script
+  user properties).</li>
+<li>Uninstalling the Add-on stops all access immediately. Files already
+  generated remain in your Drive under your control.</li>
+</ul>
+<h2>7. Security</h2>
+<p>The Add-on runs on Google's Apps Script platform and uses only the
+permissions listed above — each one is required for a specific function of
+the Add-on. No system is perfectly secure, but the design principle is that
+there is no developer-side database of user content to breach.</p>
+<h2>8. Children</h2>
+<p>The Add-on is a business/productivity tool and is not directed at children
+under the age required to hold a Google account under applicable law.</p>
+<h2>9. Changes to this policy</h2>
+<p>If we change this policy in a way that affects what data the Add-on accesses,
+we will update this page and the effective date above, and — where the change
+increases the permissions the Add-on requests — Google will ask for your
+consent to the new permissions before they take effect.</p>
+<h2>10. Contact</h2>
+<p>Questions about this policy: <strong>miv1982.biz@gmail.com</strong></p>
+<hr />
+<h1>プライバシーポリシー — Batch Docs（参考訳）</h1>
+<blockquote>
+<p><strong>参考訳：</strong> 以下は上記英語版の参考訳です。<strong>正文は英語版</strong>とします。
+本文書はドラフトであり、公開前に事業者による最終確認（法的レビューを含む）が必要です。</p>
+</blockquote>
+<p><strong>施行日：</strong> 2026年10月31日
+<strong>事業者：</strong> Mikio Furusawa（以下「当方」）
+<strong>連絡先：</strong> miv1982.biz@gmail.com</p>
+<p>Batch Docs（以下「本アドオン」）は、Google ドキュメントのテンプレートを使い、
+Google スプレッドシートの行データから Google ドキュメントおよび PDF を一括生成
+する Google Sheets アドオンです。本ポリシーでは、本アドオンがアクセスするデータ、
+そのデータの保管場所、および当方が<strong>行わないこと</strong>を説明します。要点は次の通り
+です。<strong>本アドオンはあなたの Google アカウント内で動作し、スプレッドシートの
+内容が当方のサーバーに送信されることはなく、当方はスプレッドシートのデータを
+受信するサーバーを運用していません。</strong></p>
+<h2>1. アクセスするデータと目的</h2>
+<p>本アドオンが要求する Google の権限（OAuth スコープ）は次の4つです。</p>
+<ul>
+<li><strong>開いているスプレッドシートのみ</strong>（<code>spreadsheets.currentonly</code>）。生成を実行
+  すると、本アドオンは開いているスプレッドシートの行（見出し行とアクティブ
+  シートのデータ行）を読み取り、テンプレートに差し込みます。生成後は、同じ
+  スプレッドシートに「ステータス」「生成ファイルへのリンク」「生成日時」を
+  書き戻します。</li>
+<li><strong>Google Drive</strong>（<code>drive</code>）。あなたが選択したテンプレートと出力フォルダを
+  開くため、および出力フォルダと生成した文書・PDF をあなたの Drive に作成
+  するために使用します。この権限は Drive 全体を対象としますが、本アドオンが
+  実際に扱うのは、あなたが選んだテンプレートと出力先のみです。無関係な
+  ファイルを閲覧・走査・読み取ることはありません。</li>
+<li><strong>Google ドキュメント</strong>（<code>documents</code>）。テンプレート文書を読み取って
+  <code>{{タグ}}</code> を検出し、生成文書を作成するために使用します。</li>
+<li><strong>UI 表示</strong>（<code>script.container.ui</code>）。Google スプレッドシート内にサイドバー
+  とダイアログを表示するためだけの権限で、データへのアクセスは伴いません。</li>
+</ul>
+<p>本アドオンは、Gmail、連絡先、カレンダーへのアクセスを要求しません。文書の
+処理はすべてあなたの Google アカウント内で行われます（第2項参照）。唯一の
+例外は有料プランのライセンス確認で、当方のライセンスサービスへ送信される
+のはライセンストークンとアカウント識別子のみであり、コンテンツが送信される
+ことはありません（第2項参照）。</p>
+<h2>2. データの保管場所</h2>
+<ul>
+<li><strong>コンテンツはあなたの Google アカウント内に留まります。</strong> スプレッドシート
+  の行、テンプレート、生成された文書は、あなたの Google アカウントのもとで
+  Google Apps Script により処理され、あなたの Google Drive に保存されます。
+  当方が運用するサーバーにコピー、保存、送信されることはありません。</li>
+<li><strong>レシピはスプレッドシート内に保存されます。</strong> 「レシピ」（テンプレートの
+  参照、タグと列の対応付け、出力形式、ファイル名パターン、出力フォルダ、
+  書き戻し列名）は、スプレッドシート自体のプロパティ（Google Apps Script の
+  DocumentProperties）に保存されます。レシピはそのスプレッドシートと運命を
+  共にし、本アドオンを通じてそのスプレッドシートにアクセスできる人にのみ
+  利用されます。</li>
+<li><strong>利用件数カウンタ。</strong> 無料プランの上限を適用するため、本アドオンは月ごとに
+  生成件数のシンプルなカウンタを保持します。カウンタは、あなたの Google
+  アカウント内の Apps Script ユーザープロパティ（UserProperties）に保存される
+  数値であり、スプレッドシートの内容は含まれません。</li>
+<li><strong>ライセンスキーとライセンス確認。</strong> 有料プランをご利用の場合、入力した
+  ライセンスキー（トークン）は、実行時にプランを確認できるよう、あなたの
+  Google アカウント内の Apps Script ユーザープロパティに保存されます。有料
+  ライセンスの確認のため、本アドオンは当方が運用するライセンスサービスへ、
+  ライセンストークンと Google アカウントの識別子（本アドオンを使用している
+  アカウントのメールアドレス。メールアドレスが取得できない環境ではインス
+  トール ID）の<strong>のみ</strong>を送信します。<strong>文書の内容、スプレッドシートの
+  データ、テンプレートの内容、ファイル名が送信されることは一切ありません。</strong>
+  ライセンスサービスが保存するのは、トークンのハッシュ（トークン自体は
+  保存しません）、プランの状態、および決済事業者から受け取るサブスクリプ
+  ションの期間情報のみです（第3項参照）。このライセンス確認が、本アドオン
+  から当方の運用するサービスへ行われる唯一の通信であり、文書の処理自体は
+  引き続きすべてあなたの Google アカウント内で完結します。</li>
+</ul>
+<h2>3. 決済について</h2>
+<p>有料プランは、販売事業者（Merchant of Record）である <strong>Paddle</strong> を通じて
+販売されます。サブスクリプション購入時、支払い情報（カード情報等）を収集・
+処理するのは当方ではなく Paddle であり、Paddle 自身のプライバシーポリシーが
+適用されます。当方がカード情報の全容を受け取ったり保存したりすることは
+ありません。当方が Paddle から受け取るのは、サブスクリプションの運営に必要な
+情報（購入・更新の発生、プラン、その状態、ライセンスキー等の権利記録）のみです。</p>
+<h2>4. 当方が行わないこと</h2>
+<ul>
+<li>スプレッドシート、テンプレート、生成文書の内容を、当方のいかなるサーバー
+  にも収集、受信、保存しません。</li>
+<li>個人データを販売しません。</li>
+<li>あなたのコンテンツを広告に利用せず、本アドオンには広告や第三者の解析
+  トラッカーは含まれません。</li>
+<li>あなたに代わってメールを送信しません（本アドオンに Gmail の権限は
+  ありません）。</li>
+</ul>
+<h2>5. アドオン外で受け取る情報</h2>
+<p>サポートにお問い合わせいただいた場合、そのメッセージに含まれる情報
+（メールアドレス、問題の内容等）を受け取ります。問題再現のための最小限の
+例示を当方が具体的にお願いする場合を除き、機密情報を含むスプレッドシートや
+文書は送らないでください。サポートのやり取りは、回答と本アドオンの改善の
+目的でのみ使用します。</p>
+<h2>6. 保管と削除</h2>
+<p>コンテンツと設定はあなたの Google アカウント内にあるため、管理はあなたが
+行えます。</p>
+<ul>
+<li>レシピは、スプレッドシートを削除するか、本アドオンでクリアすることで
+  削除できます。</li>
+<li>利用件数カウンタとライセンスキーは、本アドオンの保存データを削除する
+  ことで消去できます（アンインストールし、必要に応じて Apps Script の
+  ユーザープロパティの消去方法を当方にお尋ねください）。</li>
+<li>本アドオンをアンインストールすると、アクセスは直ちに停止します。生成済み
+  のファイルはあなたの Drive に残り、あなたの管理下にあります。</li>
+</ul>
+<h2>7. セキュリティ</h2>
+<p>本アドオンは Google の Apps Script プラットフォーム上で動作し、上記の
+権限のみを使用します。各権限は、本アドオンの特定の機能に必要なものだけに
+限っています。いかなるシステムも完全に安全ではありませんが、「開発者側に
+ユーザーコンテンツのデータベースが存在しない」ことが本設計の原則です。</p>
+<h2>8. 子どもの利用について</h2>
+<p>本アドオンは業務・生産性向上のためのツールであり、適用法令上 Google
+アカウントの保有が認められる年齢未満の子どもを対象としていません。</p>
+<h2>9. 本ポリシーの変更</h2>
+<p>本アドオンがアクセスするデータに影響する変更を行う場合、本ページと上記の
+施行日を更新します。権限が拡大する変更については、その効力発生前に
+Google があなたの同意を求めます。</p>
+<h2>10. 連絡先</h2>
+<p>本ポリシーに関するお問い合わせ： <strong>miv1982.biz@gmail.com</strong></p>
+<footer>Batch Docs — operated by Mikio Furusawa. Contact: <a href="mailto:miv1982.biz@gmail.com">miv1982.biz@gmail.com</a></footer>
+</body>
+</html>
