@@ -47,7 +47,10 @@ code { background: #f3f3f3; padding: 1px 5px; border-radius: 4px; }
 </head>
 <body>
 <div class="wrap">
-<nav><span class="brand"><img src="icon-128.png" alt="">Batch Docs</span><a href="index.html">Home</a></nav>
+
+<body>
+<div class="wrap">
+<nav><span class="brand"><img src="icon-128.png" alt="">Batch Docs</span><a href="index.html">Home</a><span style="margin-left:auto">English · <a href="index-ja.html">日本語</a></span></nav>
 
 <header class="hero">
 <img src="icon-512.png" alt="Batch Docs icon">
@@ -104,51 +107,6 @@ spreadsheet row.</p>
 
 <h2>Support</h2>
 <p>Questions, or a problem not covered in the add-on's help: <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScVaQK8d8y2f6PzoUDovB6-oS2jhEqHVIiK9E4ARqc-f9UcmQ/viewform">Contact form</a></strong></p>
-
-<div class="lang">
-<h2>Batch Docs（日本語）</h2>
-<p><strong>スプレッドシートの行データを、完成した Google ドキュメントや PDF に
-変換します。</strong> 1行につき1文書——1つのテンプレートから一括生成。</p>
-<p>データは Google スプレッドシートに揃っている。でも請求書・証明書・
-契約書・通知書・報告書といった文書は、結局1件ずつ手で作っている——
-Batch Docs はその手間をなくすためのアドオンです。Google ドキュメントで
-テンプレートを1つ用意し、<code>{{取引先}}</code> <code>{{金額}}</code> <code>{{日付}}</code> のような
-<code>{{タグ}}</code> を置くだけ。あとはスプレッドシートの行ごとに、完成した文書が
-自動で生成されます。</p>
-<h3>使い方</h3>
-<div class="cards">
-<div class="card"><span class="stepnum">1</span><h3>テンプレートを選ぶ</h3><p>Google ドキュメントのテンプレを指定すると、
-   <code>{{タグ}}</code> を自動検出し、シートの列と自動で対応付けます（手動で変更も
-   可能）。</p></div>
-<div class="card"><span class="stepnum">2</span><h3>出力を選ぶ</h3><p>Google ドキュメントか PDF、列の値を使ったファイル名
-   パターン（例：<code>請求書_{{取引先}}_{{番号}}</code>）、保存先フォルダを指定します。</p></div>
-<div class="card"><span class="stepnum">3</span><h3>実行する</h3><p>全文書を生成して Drive に保存し、シートに「ステータス／
-   ファイルへのリンク／生成日時」を書き戻します。何を・いつ・どこに
-   生成したかが、シート上にすべて残ります。</p></div>
-</div>
-<h3>特徴</h3>
-<div class="cards">
-<div class="card"><h3>レシピで繰り返しをなくす</h3><p>生成設定を「レシピ」としてスプレッド
-  シート内に保存できます。来月の運用はワンクリック。再設定も再確認も
-  不要です。</p></div>
-<div class="card"><h3>決定論的な生成</h3><p>AI の推測は入りません。同じテンプレと同じデータ
-  からは、常に同じ文書が生成されます。「決まった帳票を・大量に・
-  正確に・履歴付きで出す」ための道具です。</p></div>
-<div class="card"><h3>プライバシー配慮の設計</h3><p>処理はすべてあなたの Google アカウント
-  内で完結し、文書データが開発者のサーバーに送られることはありません。
-  唯一の例外は有料プランのライセンス確認で、送信されるのはライセンス
-  トークンとアカウント識別子のみです（コンテンツは送信されません）。
-  詳細はプライバシーポリシーをご覧ください。</p></div>
-</div>
-<h3>料金</h3>
-<div class="cards price">
-<div class="card"><h3>Free（無料）</h3><p><span class="amount">月25件まで生成可能。</span> 全機能が使えます。月の上限に達すると、その月の追加生成は止まります。生成済みの文書と保存したレシピは、あなたの Google アカウントに残り、プランに関係なくいつでも使えます。</p></div>
-<div class="card"><h3>Pro</h3><p><span class="amount">US$9／ユーザー／月、または US$69／年。</span> 生成件数無制限。毎月の定型生成（請求書・証明書・通知書など）に、件数を気にせず使えます。</p></div>
-<div class="card"><h3>Team</h3><p><span class="amount">US$49／ワークスペース／月。</span> <em>（将来提供予定）</em></p></div>
-</div>
-<h3>サポート</h3>
-<p>お問い合わせ： <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScVaQK8d8y2f6PzoUDovB6-oS2jhEqHVIiK9E4ARqc-f9UcmQ/viewform">お問い合わせフォーム</a></strong></p>
-</div>
 
 <footer>Batch Docs — operated by globe Entertainment. Contact: <a href="https://docs.google.com/forms/d/e/1FAIpQLScVaQK8d8y2f6PzoUDovB6-oS2jhEqHVIiK9E4ARqc-f9UcmQ/viewform">Contact form</a><br><a href="privacy-policy.html">Privacy Policy</a> · <a href="terms-of-service.html">Terms of Service</a> · <a href="refund-policy.html">Refund Policy</a><br>姉妹サービス（検証中）：<a href="https://ouen.globe-ent.com/">OUEN ― 応援ページを、ファンが先に</a></footer>
 </div>
