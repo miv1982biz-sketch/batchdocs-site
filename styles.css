@@ -1,0 +1,65 @@
+/* Batch Docs — public site stylesheet.
+   Single source of styles for every page (see DESIGN.md).
+   Tokens first, then shared base, then components. No per-page <style>,
+   no inline style attributes. */
+
+/* Tokens */
+:root {
+  --ink: #222;
+  --mut: #5f6368;
+  --line: #e2e2e2;
+  --blue: #0b57d0;
+  --bg: #f8fafd;
+  --code-bg: #f3f3f3;
+  --footer-ink: #666;
+}
+
+/* Base */
+* { box-sizing: border-box; }
+body {
+  font-family: -apple-system, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  line-height: 1.7;
+  color: var(--ink);
+  margin: 0;
+}
+/* Document layout (policy pages, 404): the body itself is the column. */
+body.doc { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+
+/* Nav (shared) */
+nav { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; padding: 16px 0; font-size: 14px; }
+nav a { color: var(--blue); text-decoration: none; }
+nav a:hover { text-decoration: underline; }
+nav .brand { font-weight: 700; color: var(--ink); margin-right: 8px; display: inline-flex; align-items: center; gap: 8px; }
+nav .brand img { width: 24px; height: 24px; border-radius: 6px; }
+body.doc nav { padding: 12px 0 20px; border-bottom: 1px solid var(--line); margin-bottom: 28px; }
+.lang-switch { margin-left: auto; }
+
+/* Headings */
+h2 { font-size: 22px; margin-top: 44px; }
+h3 { font-size: 17px; margin: 0 0 6px; }
+body.doc h1 { font-size: 28px; line-height: 1.3; }
+body.doc h2 { font-size: 20px; margin-top: 36px; }
+body.doc h3 { font-size: 16px; margin-top: 28px; }
+
+/* Footer / code (shared) */
+footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 14px; color: var(--footer-ink); }
+code { background: var(--code-bg); padding: 1px 5px; border-radius: 4px; }
+
+/* Landing components */
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 16px 64px; }
+.hero { background: var(--bg); border: 1px solid var(--line); border-radius: 16px; padding: 40px 28px; text-align: center; margin: 8px 0 36px; }
+.hero img { width: 72px; height: 72px; border-radius: 16px; }
+.hero h1 { font-size: 30px; line-height: 1.3; margin: 16px 0 8px; }
+.hero .tag { font-size: 18px; font-weight: 700; margin: 0 0 8px; }
+.hero p { color: var(--mut); margin: 0 auto 20px; max-width: 620px; }
+.btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn { display: inline-block; padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 16px; text-decoration: none; border: 1px solid var(--blue); }
+.btn.primary { background: var(--blue); color: #fff; }
+.btn.ghost { color: var(--blue); background: #fff; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 16px; }
+.card { border: 1px solid var(--line); border-radius: 12px; padding: 18px; background: #fff; }
+.card p { margin: 0; color: var(--mut); font-size: 16px; }
+.stepnum { display: inline-flex; width: 26px; height: 26px; border-radius: 50%; background: var(--blue); color: #fff; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; margin-bottom: 10px; }
+.price .plan { font-size: 16px; }
+.price .amount { font-size: 16px; font-weight: 700; color: var(--ink); }
+.lang { margin-top: 56px; border-top: 2px solid var(--line); padding-top: 8px; }
